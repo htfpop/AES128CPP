@@ -86,7 +86,7 @@
 		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AESEncrypt128.h">
 			<Option target="AES"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES/cmake-build-debug/AES_Constants.h">
+		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AES_Constants.h">
 			<Option target="AES"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES/main.cpp">

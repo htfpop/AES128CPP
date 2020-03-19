@@ -21,6 +21,7 @@ bool isHex(char character);
 bool checkKey(string* user);
 string clearWhiteSpace(string* userString);
 void initAESByteArray(t_uint8 * keyArr, string* userString);
+void gBox(t_uint8* keyptr, unsigned int rc);
 
 /**************************
  * for packaging later on *
@@ -37,7 +38,12 @@ int main(int argc, char *argv[]) {
     string userInputKey = "";                                           /* User input string used for parser */
     bool isValidKey = false;                                            /* Used to check valid key */
     char userChoice = '0';
+#if 0
+    t_uint8 testing[4] = {0xBE, 0xEF, 0x4D, 0xAD};
+    t_uint8* testPtr = testing;
+    gBox(testPtr, 1);
 
+#endif
     cout << "Hello world" << endl;
 
     if (argc <= 1) {                                                    /* If number of arguments less than req. */
@@ -165,14 +171,53 @@ void pkcs5(t_uint8 dataBlock[], int numBytes) {
 
 t_uint8* genKeySchedule(t_uint8* key_ptr)
 {
-    t_uint32 myarr[4] = {0};
-    t_uint32* myarrptr = (t_uint32*)(key_ptr);
-    myarrptr++;
-    myarrptr++;
-    myarrptr++;
-    printf("%x", *myarrptr);
+    t_uint8 keyArr_bytes[176] = {0};
+    t_uint8* currentBytePtr = keyArr_bytes;
+    t_uint8* key_ptr_ptr = key_ptr;
+    for(int i = 0; i < 4; i++){                     /* copy over first 4 bytes of key */
+        *currentBytePtr++ = *key_ptr_ptr++;
+    }
 
-    memcpy(myarrptr, key_ptr,4); // WRONG ENDIANNESS
-    //myarr[0] = key_ptr[0] | key_ptr[1]<<8 | key_ptr[2] << 16 | key_ptr[3] << 24;
+    for(int round = 1; round < 10)
+
+
+//    t_uint8* currentByte = keyArr_bytes[0];
+//    t_uint8* word1[4];
+//
+//    t_uint32 myarr[4] = {0};
+//    t_uint32* myarrptr = (t_uint32*)(key_ptr);
+//    myarrptr++;
+//    myarrptr++;
+//    myarrptr++;
+//    printf("%x", *myarrptr);
+//
+//    memcpy(myarrptr, key_ptr,4); // WRONG ENDIANNESS
+//    //myarr[0] = key_ptr[0] | key_ptr[1]<<8 | key_ptr[2] << 16 | key_ptr[3] << 24;
     return nullptr;
+}
+
+void gBox(t_uint8* keyptr, unsigned int roundKey)
+{
+    t_uint8* current = keyptr;
+    t_uint8* next = keyptr + sizeof(unsigned char);
+    t_uint8 temp = *keyptr;
+
+    for(int i = 0; i < 3; i++)
+    {
+        *current = *next;
+        next++;
+        current++;
+    }
+    *current = temp;
+
+    current -= 3*sizeof(unsigned char);
+
+    for(int i = 0; i < 4;i++)
+    {
+        *current = getSBox(*current);
+        current++;
+    }
+
+    current -= 4*sizeof(unsigned char);
+    *current ^= rcon[roundKey+1];
 }

@@ -69,3 +69,4 @@ static int getSBox(int num)
 {
     return sbox[num];
 }
+
