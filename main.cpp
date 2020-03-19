@@ -171,14 +171,19 @@ void pkcs5(t_uint8 dataBlock[], int numBytes) {
 
 t_uint8* genKeySchedule(t_uint8* key_ptr)
 {
+    t_uint32* word1 = (t_uint32*) key_ptr;
+    t_uint32* word2 = (t_uint32*) (word1 + 1);
+    t_uint32* word3 = (t_uint32*) (word2 + 1);
+    t_uint32* word4 = (t_uint32*) (word3 + 1);
+    t_uint32* word5 = (t_uint32*) (word4 +1);
     t_uint8 keyArr_bytes[176] = {0};
     t_uint8* currentBytePtr = keyArr_bytes;
     t_uint8* key_ptr_ptr = key_ptr;
-    for(int i = 0; i < 4; i++){                     /* copy over first 4 bytes of key */
+    for(int i = 0; i < 16; i++){                     /* copy over first 4 words of key */
         *currentBytePtr++ = *key_ptr_ptr++;
     }
 
-    for(int round = 1; round < 10)
+    //for(int round = 1; round < 10)
 
 
 //    t_uint8* currentByte = keyArr_bytes[0];
