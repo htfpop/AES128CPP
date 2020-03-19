@@ -1,3 +1,10 @@
+/******************************************************
+ *  Christopher K. Leung (012586444)                  *
+ *  CS 4600 - Cryptography and Information Security   *
+ *  Due - March 22, 2020                              *
+ *  AES128-ECB Implementation                         *
+ ******************************************************/
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -7,12 +14,21 @@
 using namespace std;
 //B2 F6 CF D2 1D 00 AF F9 16 9A 1D B8 0D d8 40 04
 //B2F6CFD21D00AFF9169A1DB80Dd84004
+//BEEF4DADBEEF4DADBEEF4DADBEEF4DAD
 
 void pkcs5(t_uint8 dataBlock[], int buffByte);
 bool isHex(char character);
 bool checkKey(string* user);
 string clearWhiteSpace(string* userString);
 void initAESByteArray(t_uint8 * keyArr, string* userString);
+
+/**************************
+ * for packaging later on *
+ **************************/
+t_uint8* genKeySchedule(t_uint8* key_ptr);
+/**************************
+ * for packaging later on *
+ **************************/
 
 int main(int argc, char *argv[]) {
     t_uint8 dataBuffer[BUFFSIZE];                                       /* Input buffer from file */
@@ -53,15 +69,16 @@ int main(int argc, char *argv[]) {
         }
     }while(!isValidKey && (userChoice == 'y'|| userChoice == 'Y'));     /* do-while user wants to input new keys */
     if(!isValidKey){                                                    /* if still invalid key exit program */
-        cout << "Exiting program, cannot use key from user" << endl;
+        cout << "Exiting program, cannot use key specified by user" << endl;
         exit(0);
     }
 
     initAESByteArray(aesKey_Ptr, &userInputKey);                        /* Initialize byte array with hex string */
+    genKeySchedule(aesKey_Ptr);
 
     memset(dataBuffer, 0, sizeof(dataBuffer));                          /* Wipe out garbage data in data buffer */
 
-    fseek(src,0, SEEK_END);                                             /* fseek to count # bytes in file */
+    fseek(src,0, SEEK_END);                                             /* fseek() to count # bytes in file */
     int fileSize = ftell(src);                                          /* Determine file size*/
     rewind(src);                                                        /* Reset file pointer*/
     bool extraPadBlock = fileSize%16 == 0;                              /* Determine if file is multiple of 16 bytes*/
@@ -117,7 +134,7 @@ string clearWhiteSpace(string* userString){
     string newString = "";
     for(int strIndex = 0; strIndex < copiedString.length(); strIndex++)
     {
-        if(copiedString[strIndex] == ' ' || copiedString[strIndex] == NULL)
+        if(copiedString[strIndex] == ' ' || copiedString[strIndex] == '\0')
             continue;
         else{
             newString += toupper(copiedString[strIndex]);
@@ -139,4 +156,23 @@ void pkcs5(t_uint8 dataBlock[], int numBytes) {
     for(i; i < BUFFSIZE; i++){
         dataBlock[i] = difference;
     }
+}
+
+
+/**********************************
+ * For data packaging later on    *
+ * ********************************/
+
+t_uint8* genKeySchedule(t_uint8* key_ptr)
+{
+    t_uint32 myarr[4] = {0};
+    t_uint32* myarrptr = (t_uint32*)(key_ptr);
+    myarrptr++;
+    myarrptr++;
+    myarrptr++;
+    printf("%x", *myarrptr);
+
+    memcpy(myarrptr, key_ptr,4); // WRONG ENDIANNESS
+    //myarr[0] = key_ptr[0] | key_ptr[1]<<8 | key_ptr[2] << 16 | key_ptr[3] << 24;
+    return nullptr;
 }

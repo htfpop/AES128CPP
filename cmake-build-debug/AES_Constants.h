@@ -64,3 +64,8 @@ static unsigned char mul_3[] = {
 
 const static unsigned char rcon[] = {0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36};
 #endif //AES_AES_CONSTANTS_H
+
+static int getSBox(int num)
+{
+    return sbox[num];
+}
