@@ -22,7 +22,6 @@ bool checkKey(string* user);
 string clearWhiteSpace(string* userString);
 void initAESByteArray(t_uint8 * keyArr, string* userString);
 void gBox(t_uint8* keyptr, unsigned int rc);
-
 /**************************
  * for packaging later on *
  **************************/
@@ -78,6 +77,7 @@ int main(int argc, char *argv[]) {
         cout << "Exiting program, cannot use key specified by user" << endl;
         exit(0);
     }
+
 
     initAESByteArray(aesKey_Ptr, &userInputKey);                        /* Initialize byte array with hex string */
     genKeySchedule(aesKey_Ptr);
@@ -171,16 +171,29 @@ void pkcs5(t_uint8 dataBlock[], int numBytes) {
 
 t_uint8* genKeySchedule(t_uint8* key_ptr)
 {
-    t_uint32* word1 = (t_uint32*) key_ptr;
-    t_uint32* word2 = (t_uint32*) (word1 + 1);
-    t_uint32* word3 = (t_uint32*) (word2 + 1);
-    t_uint32* word4 = (t_uint32*) (word3 + 1);
-    t_uint32* word5 = (t_uint32*) (word4 +1);
+//    t_uint32* word1 = (t_uint32*) key_ptr;
+//    t_uint32* word2 = (t_uint32*) (word1 + 1);
+//    t_uint32* word3 = (t_uint32*) (word2 + 1);
+//    t_uint32* word4 = (t_uint32*) (word3 + 1);
+//    t_uint32* word5 = (t_uint32*) (word4 +1);
+//    *word5 = *word1 ^ *word2;
     t_uint8 keyArr_bytes[176] = {0};
     t_uint8* currentBytePtr = keyArr_bytes;
     t_uint8* key_ptr_ptr = key_ptr;
     for(int i = 0; i < 16; i++){                     /* copy over first 4 words of key */
         *currentBytePtr++ = *key_ptr_ptr++;
+    }
+
+    t_uint8* w1 = keyArr_bytes;
+    t_uint8* w2 = w1 + 4;
+    t_uint8* w3 = w2 + 4;
+    t_uint8* w4 = w3 + 4;
+
+    for(int i = 1; i < 10; i ++)
+    {
+        gBox(w4,i);
+
+
     }
 
     //for(int round = 1; round < 10)
