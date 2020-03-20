@@ -21,7 +21,8 @@ bool isHex(char character);
 bool checkKey(string* user);
 string clearWhiteSpace(string* userString);
 void initAESByteArray(t_uint8 * keyArr, string* userString);
-void gBox(t_uint8* keyptr, unsigned int rc);
+void gBox(t_uint8* gbox, t_uint8* keyptr, unsigned int rc);
+void xorFunction(t_uint8* arr1, t_uint8* arr2, t_uint8* currentBytePtr);
 /**************************
  * for packaging later on *
  **************************/
@@ -171,12 +172,7 @@ void pkcs5(t_uint8 dataBlock[], int numBytes) {
 
 t_uint8* genKeySchedule(t_uint8* key_ptr)
 {
-//    t_uint32* word1 = (t_uint32*) key_ptr;
-//    t_uint32* word2 = (t_uint32*) (word1 + 1);
-//    t_uint32* word3 = (t_uint32*) (word2 + 1);
-//    t_uint32* word4 = (t_uint32*) (word3 + 1);
-//    t_uint32* word5 = (t_uint32*) (word4 +1);
-//    *word5 = *word1 ^ *word2;
+
     t_uint8 keyArr_bytes[176] = {0};
     t_uint8* currentBytePtr = keyArr_bytes;
     t_uint8* key_ptr_ptr = key_ptr;
@@ -189,53 +185,78 @@ t_uint8* genKeySchedule(t_uint8* key_ptr)
     t_uint8* w3 = w2 + 4;
     t_uint8* w4 = w3 + 4;
 
-    for(int i = 1; i < 10; i ++)
+    for(int i = 1; i < 11; i ++)
     {
-        gBox(w4,i);
-
+        t_uint8 gBoxReturn[4] = {0};
+        gBox(&gBoxReturn[0],w4,i);
+        xorFunction(&gBoxReturn[0], w1, currentBytePtr);
+        currentBytePtr += 4;
+        w1 += 16;
+        xorFunction(w1, w2, currentBytePtr);
+        (currentBytePtr += 4);
+        w2+= 16;
+        xorFunction(w2,w3,currentBytePtr);
+        (currentBytePtr += 4);
+        w3+=16;
+        xorFunction(w3,w4,currentBytePtr);
+        (currentBytePtr += 4);
+        w4+=16;
 
     }
+    return &keyArr_bytes[0];
 
-    //for(int round = 1; round < 10)
-
-
-//    t_uint8* currentByte = keyArr_bytes[0];
-//    t_uint8* word1[4];
-//
-//    t_uint32 myarr[4] = {0};
-//    t_uint32* myarrptr = (t_uint32*)(key_ptr);
-//    myarrptr++;
-//    myarrptr++;
-//    myarrptr++;
-//    printf("%x", *myarrptr);
-//
-//    memcpy(myarrptr, key_ptr,4); // WRONG ENDIANNESS
-//    //myarr[0] = key_ptr[0] | key_ptr[1]<<8 | key_ptr[2] << 16 | key_ptr[3] << 24;
-    return nullptr;
 }
 
-void gBox(t_uint8* keyptr, unsigned int roundKey)
+void gBox(t_uint8* gbox, t_uint8* keyptr, unsigned int roundKey)
 {
-    t_uint8* current = keyptr;
-    t_uint8* next = keyptr + sizeof(unsigned char);
-    t_uint8 temp = *keyptr;
+    gbox[0] = *keyptr;
+    gbox[1] = *(keyptr + 1);
+    gbox[2] = *(keyptr + 2);
+    gbox[3] = *(keyptr + 3);
+    t_uint8 temp = gbox[0];
 
-    for(int i = 0; i < 3; i++)
+    gbox[0] = gbox[1];
+    gbox[1] = gbox[2];
+    gbox[2] = gbox[3];
+    gbox[3] = temp;
+
+    for(int i = 0; i < 4; i++)
     {
-        *current = *next;
-        next++;
-        current++;
-    }
-    *current = temp;
-
-    current -= 3*sizeof(unsigned char);
-
-    for(int i = 0; i < 4;i++)
-    {
-        *current = getSBox(*current);
-        current++;
+        gbox[i] = getSBox(gbox[i]);
     }
 
-    current -= 4*sizeof(unsigned char);
-    *current ^= rcon[roundKey+1];
+    gbox[0] ^= rcon[roundKey];
+
+//    t_uint8* current = keyptr;
+//    t_uint8* next = keyptr + sizeof(unsigned char);
+//    t_uint8 temp = *keyptr;
+//
+//    for(int i = 0; i < 3; i++)
+//    {
+//        *current = *next;
+//        next++;
+//        current++;
+//    }
+//    *current = temp;
+//
+//    current -= 3*sizeof(unsigned char);
+//
+//    for(int i = 0; i < 4;i++)
+//    {
+//        *current = getSBox(*current);
+//        current++;
+//    }
+//
+//    current -= 4*sizeof(unsigned char);
+//    *current ^= rcon[roundKey+1];
+}
+
+void xorFunction(t_uint8* arr1, t_uint8* arr2, t_uint8* currentBytePtr)
+{
+    t_uint8* arrPtr1 = arr1;
+    t_uint8* arrPtr2 = arr2;
+    for(int i = 0; i < 4; i++){
+        *currentBytePtr = (*arrPtr1++) ^ (*arrPtr2++);
+        currentBytePtr++;
+    }
 }
