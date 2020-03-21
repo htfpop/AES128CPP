@@ -75,18 +75,7 @@ int main(int argc, char *argv[]) {
 
     initAESByteArray(aesKey_Ptr, &userInputKey);                        /* Initialize byte array with hex string */
     t_uint8* keys = genKeySchedule(aesKey_Ptr);
-#if 0
-    for(int i = 0; i < 11; i++)
-    {
-        printf("Key %d:",i);
-        for(int j = 0; j < 16; j++)
-        {
-            printf("%02X",(keys[j]));
-        }
-        keys+=16;
-        std::cout<<std::endl;
-    }
-#endif
+
     memset(dataBuffer, 0, sizeof(dataBuffer));                          /* Wipe out garbage data in data buffer */
 
     fseek(src,0, SEEK_END);                                             /* fseek() to count # bytes in file */
@@ -97,9 +86,11 @@ int main(int argc, char *argv[]) {
     printf("Filesize is %d bytes\n",fileSize);                          /* Printout for file size*/
     int readFromBuffer = 0;                                             /* Counter for data buffer*/
 
-    char * dst[100];
-    //strncpy(dst,argv[1],100);
+    //fixme
+    std::string mystring = argv[1];
+    mystring.append(".enc");
 
+    FILE* dstfile = fopen(mystring.c_str(),"wb");
     while(!feof(src))                                                   /* While file not end of file*/
     {
         readFromBuffer = fread(dataBuffer, sizeof(t_uint8), BUFFSIZE, src); /* Read 16 bytes to buffer */
@@ -108,9 +99,10 @@ int main(int argc, char *argv[]) {
 
         encryptBlock(dataBuffer,keys);
 
-        //fwrite(dataBuffer, sizeof(char), BUFFSIZE, dst)               /* Write out encrypted to file */
+        fwrite(dataBuffer, sizeof(char), BUFFSIZE, dstfile);               /* Write out encrypted to file */
     }
     fclose(src);
+    fclose(dstfile);
     return 0;
 }
 
