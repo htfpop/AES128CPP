@@ -88,7 +88,8 @@ int main(int argc, char *argv[]) {
 
     //fixme
     std::string mystring = argv[1];
-    mystring.append(".enc");
+    mystring = mystring.substr(0,mystring.size()-4);
+    mystring+= ".enc";
 
     FILE* dstfile = fopen(mystring.c_str(),"wb");
     while(!feof(src))                                                   /* While file not end of file*/
