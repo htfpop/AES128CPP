@@ -24,6 +24,10 @@ void initAESByteArray(t_uint8 * keyArr, std::string* userString);
 void gBox(t_uint8* gbox, t_uint8* keyptr, unsigned int rc);
 void xorFunction(t_uint8* arr1, t_uint8* arr2, t_uint8* currentBytePtr);
 t_uint8* genKeySchedule(t_uint8* key_ptr);
+void encryptBlock(unsigned char* dataBlockInput, unsigned char* keys);
+void keyAddition(t_uint8* dataBlock, t_uint8* currentKey);
+int getShiftRowIndex(unsigned int index);
+void  mixColumns(unsigned char *input);
 
 int main(int argc, char *argv[]) {
     t_uint8 dataBuffer[BUFFSIZE];                                       /* Input buffer from file */
@@ -71,6 +75,7 @@ int main(int argc, char *argv[]) {
 
     initAESByteArray(aesKey_Ptr, &userInputKey);                        /* Initialize byte array with hex string */
     t_uint8* keys = genKeySchedule(aesKey_Ptr);
+#if 0
     for(int i = 0; i < 11; i++)
     {
         printf("Key %d:",i);
@@ -81,7 +86,7 @@ int main(int argc, char *argv[]) {
         keys+=16;
         std::cout<<std::endl;
     }
-
+#endif
     memset(dataBuffer, 0, sizeof(dataBuffer));                          /* Wipe out garbage data in data buffer */
 
     fseek(src,0, SEEK_END);                                             /* fseek() to count # bytes in file */
@@ -92,13 +97,16 @@ int main(int argc, char *argv[]) {
     printf("Filesize is %d bytes\n",fileSize);                          /* Printout for file size*/
     int readFromBuffer = 0;                                             /* Counter for data buffer*/
 
+    char * dst[100];
+    //strncpy(dst,argv[1],100);
+
     while(!feof(src))                                                   /* While file not end of file*/
     {
         readFromBuffer = fread(dataBuffer, sizeof(t_uint8), BUFFSIZE, src); /* Read 16 bytes to buffer */
         if(readFromBuffer <= BUFFSIZE)                                  /* If bytes read less than buffer size, pad */
             pkcs5(dataBuffer, readFromBuffer);                          /* perform pkcs5 on data buffer to pad */
 
-        //encryptBlock(dataBuffer);
+        encryptBlock(dataBuffer,keys);
 
         //fwrite(dataBuffer, sizeof(char), BUFFSIZE, dst)               /* Write out encrypted to file */
     }
@@ -231,4 +239,83 @@ void xorFunction(t_uint8* arr1, t_uint8* arr2, t_uint8* currentBytePtr)   /* Thi
         *currentBytePtr = (*arrPtr1++) ^ (*arrPtr2++);                    /* Need to derefrence pointer first then perform xor operation */
         currentBytePtr++;                                                 /* Increment pointer to key array */
     }
+}
+
+void keyAddition(t_uint8* dataBlock, t_uint8* currentKey)
+{
+    t_uint8* currentQuadWordPtr = dataBlock;
+    for(int i = 0; i < 16; i++)
+    {
+        *currentQuadWordPtr++ = (*currentQuadWordPtr) ^ (*currentKey++);
+    }
+}
+
+void encryptBlock(unsigned char* dataBlockInput, unsigned char* keyArr)
+{
+   //t_uint8* dataBlockHead = dataBlockInput;
+   t_uint8 tempArray [16] = {0};
+    t_uint8* currentQuadWordPtr = dataBlockInput;                          /* assign ptr to beginning of data block */
+    t_uint8* bytePtr = nullptr;                                                      /* Byte ptr to iterate over all pointers */
+
+    keyAddition(currentQuadWordPtr,keyArr);                                /* conduct key addition w/ first element of data block
+ *                                                                            This will increment key index by every byte but not
+ *                                                                             the current pointer to the quad word*/
+
+    for(int round = 1; round < 10; round ++) {                              /* rounds 1 - 9 */
+        bytePtr = currentQuadWordPtr;                                       /* Re-assign byte ptr to current word ptr */
+        keyArr += 16;
+
+        for (int byte = 0; byte < 16; byte++) {                             /* Byte substitution on every byte */
+            *bytePtr++ = getSBox(*bytePtr);                                 /* Increment byte ptr by 1 every time byte is substituted */
+        }
+
+        bytePtr = currentQuadWordPtr;                                       /* re-assign byteptr to head of quad word */
+        memcpy(&tempArray, currentQuadWordPtr,16);
+
+        for(int SRIndex = 0; SRIndex < 16; SRIndex++)                       /* Shift rows performed on every byte */
+        {
+            *bytePtr++ = tempArray[getShiftRowIndex(SRIndex)];              /* go to lookup table for shift rows, ref. original temp array */
+        }                                                                   /* Then increment byteptr */
+        mixColumns(dataBlockInput);                                         /* Pass in entire data block to be mixed */
+
+        keyAddition(currentQuadWordPtr,keyArr);                             /* key addition doesnt increment quad ptr */
+    }
+
+    /* ROUND 10 ONLY */
+    bytePtr = currentQuadWordPtr;                                           /* Re-assign byte ptr to quad word ptr for byte sub */
+    keyArr += 16;
+
+    for (int byte = 0; byte < 16; byte++) {                                 /* perform byte sub and increment byte ptr */
+        *bytePtr++ = getSBox(*bytePtr);
+    }
+
+    bytePtr = currentQuadWordPtr;                                           /* used for shift rows operation */
+    memcpy(&tempArray, currentQuadWordPtr,16);
+
+    for(int SRIndex = 0; SRIndex < 16; SRIndex++)                           /* perform shift row operation */
+    {
+        *bytePtr++ = tempArray[getShiftRowIndex(SRIndex)];
+    }
+    keyAddition(currentQuadWordPtr,keyArr);                                 /* perform key addition with last block */
+}
+
+int getShiftRowIndex(unsigned int index)
+{
+    int lookup[] = {0,5,10,15,4,9,14,3,8,13,2,7,12,1,6,11};
+    return lookup[index];
+}
+
+
+void  mixColumns(unsigned char *input) {
+    unsigned char tmp[16];
+    int i;
+    for (i = 0; i < 4; ++i) {
+        tmp[(i << 2) + 0] = (unsigned char) (mul2[input[(i << 2) + 0]] ^ mul_3[input[(i << 2) + 1]] ^ input[(i << 2) + 2] ^ input[(i << 2) + 3]);
+        tmp[(i << 2) + 1] = (unsigned char) (input[(i << 2) + 0] ^ mul2[input[(i << 2) + 1]] ^ mul_3[input[(i << 2) + 2]] ^ input[(i << 2) + 3]);
+        tmp[(i << 2) + 2] = (unsigned char) (input[(i << 2) + 0] ^ input[(i << 2) + 1] ^ mul2[input[(i << 2) + 2]] ^ mul_3[input[(i << 2) + 3]]);
+        tmp[(i << 2) + 3] = (unsigned char) (mul_3[input[(i << 2) + 0]] ^ input[(i << 2) + 1] ^ input[(i << 2) + 2] ^ mul2[input[(i << 2) + 3]]);
+    }
+
+    for (i = 0; i < 16; ++i)
+        input[i] = tmp[i];
 }
