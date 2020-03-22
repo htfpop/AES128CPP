@@ -14,25 +14,8 @@
     <list default="true" id="9a7c452e-e6c1-4ff5-a09b-148bd1ee286b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/AES.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AES.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/AESEncrypt128.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/AES.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/AES.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/AES.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
@@ -88,7 +71,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="AES" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;C:\Users\Chris Leung\Desktop\DATA.txt&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="AES" TARGET_NAME="AES" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="AES" RUN_TARGET_NAME="AES">
+    <configuration name="AES" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;C:\Users\Chris Leung\Desktop\DATA.docx&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="AES" TARGET_NAME="AES" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="AES" RUN_TARGET_NAME="AES">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -130,6 +113,7 @@
       <workItem from="1584839623590" duration="281000" />
       <workItem from="1584840074756" duration="44000" />
       <workItem from="1584847459773" duration="1615000" />
+      <workItem from="1584865958946" duration="644000" />
     </task>
     <servers />
   </component>
@@ -137,10 +121,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="439" y="350" width="1092" height="534" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584753243967">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1481" y="467" width="1092" height="534" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584866648279">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1481" y="467" width="1092" height="534" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584494654854" />
+    <state x="-1481" y="467" width="1092" height="534" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866648279" />
     <state x="439" y="350" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584753243967" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584429505441" />
     <state x="687" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584736504315">
@@ -189,73 +173,73 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="9" y="386" width="464" height="286" key="GridCell.Tab.-1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584744417929" />
-    <state width="1366" height="245" key="GridCell.Tab.0.bottom" timestamp="1584781264828">
+    <state width="1366" height="189" key="GridCell.Tab.0.bottom" timestamp="1584866650181">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1366" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264828" />
+    <state width="1366" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650181" />
     <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473021514" />
-    <state width="1366" height="245" key="GridCell.Tab.0.center" timestamp="1584781264828">
+    <state width="1366" height="189" key="GridCell.Tab.0.center" timestamp="1584866650181">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1366" height="245" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264828" />
+    <state width="1366" height="189" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650181" />
     <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473021514" />
-    <state width="1366" height="245" key="GridCell.Tab.0.left" timestamp="1584781264828">
+    <state width="1366" height="189" key="GridCell.Tab.0.left" timestamp="1584866650181">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1366" height="245" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264828" />
+    <state width="1366" height="189" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650181" />
     <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473021513" />
-    <state width="1366" height="245" key="GridCell.Tab.0.right" timestamp="1584781264828">
+    <state width="1366" height="189" key="GridCell.Tab.0.right" timestamp="1584866650181">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1366" height="245" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264828" />
+    <state width="1366" height="189" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650181" />
     <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473021514" />
-    <state width="1877" height="203" key="GridCell.Tab.1.bottom" timestamp="1584781264824">
+    <state width="1366" height="189" key="GridCell.Tab.1.bottom" timestamp="1584866650044">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264824" />
+    <state width="1366" height="189" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state width="1877" height="203" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473032086" />
-    <state width="1877" height="203" key="GridCell.Tab.1.center" timestamp="1584781264824">
+    <state width="1366" height="189" key="GridCell.Tab.1.center" timestamp="1584866650044">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264824" />
+    <state width="1366" height="189" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state width="1877" height="203" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473032086" />
-    <state width="1877" height="203" key="GridCell.Tab.1.left" timestamp="1584781264824">
+    <state width="1366" height="189" key="GridCell.Tab.1.left" timestamp="1584866650044">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264824" />
+    <state width="1366" height="189" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state width="1877" height="203" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473032085" />
-    <state width="1877" height="203" key="GridCell.Tab.1.right" timestamp="1584781264824">
+    <state width="1366" height="189" key="GridCell.Tab.1.right" timestamp="1584866650044">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584781264824" />
+    <state width="1366" height="189" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state width="1877" height="203" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781117604" />
     <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.81.1920.1040@0.0.1920.1040" timestamp="1584473032086" />
-    <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.bottom" timestamp="1584781074382">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.bottom" timestamp="1584866650044">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1920" y="0" width="389" height="408" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584753549148" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781074382" />
-    <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.center" timestamp="1584781074382">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.center" timestamp="1584866650044">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1920" y="0" width="389" height="408" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584753549148" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781074382" />
-    <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.left" timestamp="1584781074382">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.left" timestamp="1584866650044">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1920" y="0" width="389" height="408" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584753549148" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781074382" />
-    <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.right" timestamp="1584781074382">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.right" timestamp="1584866650044">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1920" y="0" width="389" height="408" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584753549148" />
+    <state x="-1920" y="0" width="647" height="425" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650044" />
     <state x="0" y="0" width="590" height="433" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781074382" />
     <state x="0" y="0" width="590" height="433" key="GridCell.Tab.3.bottom" timestamp="1584781074366">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -305,10 +289,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1151" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584696263430" />
-    <state x="0" y="0" width="606" height="500" key="dock-window-1" timestamp="1584781067787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-1" timestamp="1584866448185">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="112" width="1526" height="673" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584696849963" />
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866448185" />
     <state x="0" y="0" width="606" height="500" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781067787" />
     <state x="0" y="63" width="470" height="475" key="dock-window-10" timestamp="1584745648397">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -350,9 +334,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-623" y="107" width="629" height="789" key="dock-window-19/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584748430053" />
-    <state x="0" y="0" width="606" height="500" key="dock-window-2" timestamp="1584781067787">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-2" timestamp="1584866448185">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866448185" />
     <state x="0" y="0" width="606" height="500" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584781067787" />
     <state x="0" y="0" width="405" height="475" key="dock-window-20" timestamp="1584748331174">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -394,10 +379,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-599" y="22" width="615" height="796" key="dock-window-29/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584751271587" />
-    <state x="-1895" y="120" width="1010" height="621" key="dock-window-3" timestamp="1584737863341">
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-3" timestamp="1584866574647">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="31" y="486" width="609" height="485" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584697964735" />
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866574647" />
     <state x="-1895" y="120" width="1010" height="621" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584737863341" />
     <state x="0" y="0" width="405" height="475" key="dock-window-30" timestamp="1584751271588">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -420,9 +405,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1920" y="0" width="405" height="475" key="dock-window-34/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584753478377" />
-    <state x="-770" y="308" width="626" height="579" key="dock-window-4" timestamp="1584738542844">
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-4" timestamp="1584866650582">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1920" y="0" width="663" height="492" key="dock-window-4/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1584866650582" />
     <state x="-770" y="308" width="626" height="579" key="dock-window-4/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584738542844" />
     <state x="-577" y="53" width="572" height="621" key="dock-window-5" timestamp="1584746466600">
       <screen x="-1920" y="0" width="1920" height="1040" />
@@ -465,10 +451,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>103</line>
+          <line>104</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>102</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="argv[1]" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AESEncrypt128.h
+AES_Constants.h
+/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AES_Constants.h
+
+/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AES_Constants.h
+
+/cygdrive/c/Users/Chris Leung/CLionProjects/AES/main.cpp
+iostream
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+AESEncrypt128.h
+/cygdrive/c/Users/Chris Leung/CLionProjects/AES/AESEncrypt128.h
+

@@ -100,7 +100,8 @@ int main(int argc, char *argv[]) {
     int readFromBuffer = 0;                                             /* Counter for data buffer*/
 
     std::string mystring = argv[1];
-    mystring = mystring.substr(0, mystring.size() - 4);
+    int pos = mystring.find(".");
+    mystring = mystring.substr(0, pos);
     mystring += ".enc";
 
     FILE *dstfile = fopen(mystring.c_str(), "wb");
