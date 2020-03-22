@@ -1,9 +1,8 @@
 file(REMOVE_RECURSE
-  "AES.exe"
+  "AES"
   "AES.pdb"
   "CMakeFiles/AES.dir/AESEncrypt128.cpp.o"
   "CMakeFiles/AES.dir/main.cpp.o"
-  "libAES.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
