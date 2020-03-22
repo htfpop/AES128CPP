@@ -1,4 +1,4 @@
-"C:\Users\Chris Leung\.CLion2019.3\system\cygwin_cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/c/Users/Chris Leung/CLionProjects/AES"
+"C:\Users\Chris Leung\.CLion2019.3\system\cygwin_cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP"
 -- The C compiler identification is GNU 9.3.0
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working C compiler: /usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/Chris Leung/CLionProjects/AES/cmake-build-debug
+-- Build files have been written to: /cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP/cmake-build-debug

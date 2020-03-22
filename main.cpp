@@ -19,27 +19,16 @@
 //BEEF4DADBEEF4DADBEEF4DADBEEF4DAD
 
 void pkcs5(t_uint8 dataBlock[], int buffByte);
-
 bool isHex(char character);
-
 bool checkKey(std::string *user);
-
 std::string clearWhiteSpace(std::string *userString);
-
 void initAESByteArray(t_uint8 *keyArr, std::string *userString);
-
 void gBox(t_uint8 *gbox, t_uint8 *keyptr, unsigned int rc);
-
 void xorFunction(t_uint8 *arr1, t_uint8 *arr2, t_uint8 *currentBytePtr);
-
 t_uint8 *genKeySchedule(t_uint8 *key_ptr);
-
 void encryptBlock(unsigned char *dataBlockInput, unsigned char *keys);
-
 void keyAddition(t_uint8 *dataBlock, t_uint8 *currentKey);
-
 int getShiftRowIndex(unsigned int index);
-
 void mixColumns(unsigned char *input);
 
 int main(int argc, char *argv[]) {
