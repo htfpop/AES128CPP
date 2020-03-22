@@ -123,33 +123,6 @@ AES/fast:
 	$(MAKE) -f CMakeFiles/AES.dir/build.make CMakeFiles/AES.dir/build
 .PHONY : AES/fast
 
-AESEncrypt128.o: AESEncrypt128.cpp.o
-
-.PHONY : AESEncrypt128.o
-
-# target to build an object file
-AESEncrypt128.cpp.o:
-	$(MAKE) -f CMakeFiles/AES.dir/build.make CMakeFiles/AES.dir/AESEncrypt128.cpp.o
-.PHONY : AESEncrypt128.cpp.o
-
-AESEncrypt128.i: AESEncrypt128.cpp.i
-
-.PHONY : AESEncrypt128.i
-
-# target to preprocess a source file
-AESEncrypt128.cpp.i:
-	$(MAKE) -f CMakeFiles/AES.dir/build.make CMakeFiles/AES.dir/AESEncrypt128.cpp.i
-.PHONY : AESEncrypt128.cpp.i
-
-AESEncrypt128.s: AESEncrypt128.cpp.s
-
-.PHONY : AESEncrypt128.s
-
-# target to generate assembly for a file
-AESEncrypt128.cpp.s:
-	$(MAKE) -f CMakeFiles/AES.dir/build.make CMakeFiles/AES.dir/AESEncrypt128.cpp.s
-.PHONY : AESEncrypt128.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... AES"
 	@echo "... edit_cache"
-	@echo "... AESEncrypt128.o"
-	@echo "... AESEncrypt128.i"
-	@echo "... AESEncrypt128.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

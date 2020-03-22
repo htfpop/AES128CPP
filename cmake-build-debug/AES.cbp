@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP/AESEncrypt128.cpp">
-			<Option target="AES"/>
-		</Unit>
 		<Unit filename="/cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP/AESEncrypt128.h">
 			<Option target="AES"/>
 		</Unit>
