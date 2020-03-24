@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/christopherleung/CLionProjects/AES128CPP/AES128_Constants.h
+
+/Users/christopherleung/CLionProjects/AES128CPP/main.cpp
+iostream
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+AES128_Constants.h
+/Users/christopherleung/CLionProjects/AES128CPP/AES128_Constants.h
+

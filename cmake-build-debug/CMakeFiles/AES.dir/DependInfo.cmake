@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP/main.cpp" "/cygdrive/c/Users/Chris Leung/CLionProjects/AES128CPP/cmake-build-debug/CMakeFiles/AES.dir/main.cpp.o"
+  "/Users/christopherleung/CLionProjects/AES128CPP/main.cpp" "/Users/christopherleung/CLionProjects/AES128CPP/cmake-build-debug/CMakeFiles/AES.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
